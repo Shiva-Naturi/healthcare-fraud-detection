@@ -84,47 +84,47 @@ st.markdown("""
 # Cache the loading functions so they only run once
 # This makes the app faster when users interact with it
 
-@st.cache_resource
-def load_model():
-    """
-    Load the trained fraud detection model
-    Returns: trained model object
-    """
-    try:
-        with open('fraud_detection_model.pkl', 'rb') as file:
-            model = pickle.load(file)
-        return model
-    except FileNotFoundError:
-        st.error("❌ Model file not found! Please ensure 'fraud_detection_model.pkl' is in the same directory.")
-        return None
+# @st.cache_resource
+# def load_model():
+#     """
+#     Load the trained fraud detection model
+#     Returns: trained model object
+#     """
+#     try:
+#         with open('fraud_detection_model.pkl', 'rb') as file:
+#             model = pickle.load(file)
+#         return model
+#     except FileNotFoundError:
+#         st.error("❌ Model file not found! Please ensure 'fraud_detection_model.pkl' is in the same directory.")
+#         return None
 
-@st.cache_resource
-def load_scaler():
-    """
-    Load the feature scaler
-    Returns: fitted StandardScaler object
-    """
-    try:
-        with open('scaler.pkl', 'rb') as file:
-            scaler = pickle.load(file)
-        return scaler
-    except FileNotFoundError:
-        st.error("❌ Scaler file not found! Please ensure 'scaler.pkl' is in the same directory.")
-        return None
+# @st.cache_resource
+# def load_scaler():
+#     """
+#     Load the feature scaler
+#     Returns: fitted StandardScaler object
+#     """
+#     try:
+#         with open('scaler.pkl', 'rb') as file:
+#             scaler = pickle.load(file)
+#         return scaler
+#     except FileNotFoundError:
+#         st.error("❌ Scaler file not found! Please ensure 'scaler.pkl' is in the same directory.")
+#         return None
 
-@st.cache_resource
-def load_encoders():
-    """
-    Load the label encoders for categorical variables
-    Returns: dictionary of LabelEncoder objects
-    """
-    try:
-        with open('label_encoders.pkl', 'rb') as file:
-            encoders = pickle.load(file)
-        return encoders
-    except FileNotFoundError:
-        st.error("❌ Encoders file not found! Please ensure 'label_encoders.pkl' is in the same directory.")
-        return None
+# @st.cache_resource
+# def load_encoders():
+#     """
+#     Load the label encoders for categorical variables
+#     Returns: dictionary of LabelEncoder objects
+#     """
+#     try:
+#         with open('label_encoders.pkl', 'rb') as file:
+#             encoders = pickle.load(file)
+#         return encoders
+#     except FileNotFoundError:
+#         st.error("❌ Encoders file not found! Please ensure 'label_encoders.pkl' is in the same directory.")
+#         return None
 
 @st.cache_data
 def load_data():
@@ -140,10 +140,10 @@ def load_data():
         return None
 
 # Load all required objects
-model = load_model()
-scaler = load_scaler()
-encoders = load_encoders()
-data = load_data()
+# model = load_model()
+# scaler = load_scaler()
+# encoders = load_encoders()
+# data = load_data()
 
 # ============================================================================
 # SIDEBAR NAVIGATION
