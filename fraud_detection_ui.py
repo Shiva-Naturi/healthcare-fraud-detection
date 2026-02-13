@@ -133,7 +133,7 @@ def load_data():
     Returns: pandas DataFrame
     """
     try:
-        data = pd.read_csv('Claude_healthcare_insurance_claims_100k.csv')
+        #data = pd.read_csv('Claude_healthcare_insurance_claims_100k.csv')
         return data
     except FileNotFoundError:
         st.warning("⚠️ Original dataset not found. Some features will be limited.")
